@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrol Tracking App</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+     
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./w3.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="./logooo.png" alt="">Tracker</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link active" target="_blank" aria-current="page" href="https://docs.google.com/spreadsheets/d/1qvOAagEzHL51Rxz-9WGJyYzI19R4rU7MEJ2z6x6_nCs/edit#gid=0">Records</a>
+     
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5 py-3">
+    <div class="title ">
+     <h1 class="text-center">Patrol Report (ZA's)</h1>
+     <p class="text-center">This form is to capture the records of zonal assistant patrols especially their locations where they discharge their duties of visiting locations and maintaining Halogen standards amongst Halogen Operatives.</p>
+    </div>
+     <div class="">
+   
+  <form action="" class="mt-5" method="post" name="submit-to-google-sheet">
+    <div class="row">
+    <div class="col-lg-3 mb-3">
+  <label>Name of ZA</label>
+     <input type="text" required class="form-control" name="Name of ZA" id="name" autocomplete="off">
+    </div>
+
+    <div class="col-lg-3 mb-3">
+  <label>Time of Arrival</label>
+     <input type="time" class="form-control" required name="Time of Arrival" id="time" autocomplete="off">
+    </div>
+
+    <div class="col-lg-3 mb-3">
+  <label>Date</label>
+     <input type="date" class="form-control" required name="Date" id="time" autocomplete="off">
+    </div>
+      
+    <div class="col-lg-3 mb-3">
+  <label>Region</label>
+    <select class="form-select" required name="Region" id="region" onchange="populateZones()" aria-label="Default select example">
+  <option placeholder="select a region" ></option>
+  <option value="Upper Mainland 1">Upper Mainland 1</option>
+  <option value="Upper Mainland 2">Upper Mainland 2</option>
+  <option value="Lower MainLand">Lower MainLand</option>
+  <option value="Island 1">Island 1</option>
+  <option value="Island 2">Island 2</option>
+  <option value="North 1">North 1</option>
+  <option value="North 2">North 2</option>
+  <option value="East 1">East 1</option>
+  <option value="East 2">East 2</option>
+  <option value="West">West</option>
+
+</select>
+    </div>
+
+    <div class="col-lg-3 mb-3">
+  <label>Zone</label>
+         <select id="zone" name="Zone" required class="form-select" aria-label="Default select example">
+        <!-- Options will be populated dynamically -->
+    </select>
+
+    </div>
+
+    <div class="col-lg-3 mb-3">
+  <label>Name of Location</label>
+    <input type="text" name="Name of Location" required class="form-control" id="location" autocomplete="off">
+
+    </div>
+    <div class="col-lg-3 mb-3">
+  <label>Name of Supervisor</label>
+    <input type="text" name="Name of Supervisor" required class="form-control" id="supervisor" autocomplete="off">
+
+    </div>
+    <div class="col-lg-3 mb-3">
+  <label>Guard Strength</label>
+    <input type="number" name="Guard Strength" required class="form-control" id="gstr" autocomplete="off">
+
+    </div>
+    <div class="col-lg-3 mb-3">
+  <label>Number of guards Absent</label>
+    <input type="number" name="Number of guards Absent" required class="form-control" id="abs" autocomplete="off">
+
+    </div>
+
+
+    <div class="col-lg-3 mb-3">
+  <label>Reason</label>
+  <div class="form-check">
+  <input class="form-check-input" name="Reason" type="checkbox"  value="Short Manning" id="shman">
+  <label class="form-check-label" for="flexCheckDefault">
+    Short Manning
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" name="Reason" type="checkbox" value="Absenteeism" id="Absent">
+  <label class="form-check-label" for="flexCheckChecked">
+    Absenteeism
+  </label>
+</div>
+
+    </div>
+      
+    <div class="col-lg-3 mb-3">
+  <label>Documentation Status</label>
+  <div class="form-check">
+  <input class="form-check-input" name="Documentation Status" type="checkbox" value= "Complete and Current" id="cc">
+  <label class="form-check-label" for="flexCheckDefault">
+    Complete and Current
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox"  name="Documentation Status" value="Site Specific" id="ss">
+  <label class="form-check-label" for="flexCheckChecked">
+    Site Specific
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input"  name="Documentation Status" type="checkbox" value="Incomplete" id="in">
+  <label class="form-check-label" for="flexCheckChecked">
+    Incomplete
+  </label>
+</div>
+
+    </div>
+      
+        <h4>Number of Device and Status</h4>
+
+             <div class="col-12">
+           <table class="table-striped table">
+            <thead>
+                <tr>
+                    <th>Name of Device</th>
+                    <th>Faulty</th>
+                    <th>Active</th>
+                    <th>Not Deployed</th>
+                </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>Cug</td>
+               <td> <input class="form-check-input"  type="checkbox" name="CUG"  value="Faulty" id="faulty"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="CUG"  value="Active" id="active"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="CUG"  value="Not Deployed" id="notd"></td>
+                
+             </tr>
+             <tr>
+               <td>Guard Tour</td>
+               <td> <input class="form-check-input"  type="checkbox" name="Guard Tour" value="Faulty" id="gtf"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="Guard Tour" value="Active" id="gta"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="Guard Tour" value="Not Deployed" id="gtn"></td>
+                
+             </tr>
+             <tr>
+               <td>Panic Alarm</td>
+               <td> <input class="form-check-input"  type="checkbox" name="Panic Alarm" value="Faulty" id="ptf"></td>
+               <td> <input class="form-check-input"  type="checkbox"  name="Panic Alarm" value="Active" id="pta"></td>
+               <td> <input class="form-check-input"  type="checkbox"  name="Panic Alarm" value="Not Deployed" id="ptn"></td>
+                
+             </tr>
+             <tr>
+               <td>Handheld Scanner</td>
+               <td> <input class="form-check-input"  type="checkbox"  name="Handheld Scanner" value="Faulty" id="hsf"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="Handheld Scanner"  value="Active" id="hsa"></td>
+               <td> <input class="form-check-input"  type="checkbox" name="Not Deployed"  value="Not Deployed" id="hsn"></td>
+                
+             </tr>
+            </tbody>
+
+        </table>
+         </div>
+
+           <div class="col-lg-3 mb-3">
+  <label>Kitting Status</label>
+    <select class="form-select" required onchange="populateText()" name="Kitting Status" id="kit"  aria-label="Default select example">
+  <option></option>
+  <option value="Complete">Complete</option>
+  <option value="Incomplete">Incomplete</option>
+ 
+
+</select>
+    </div>
+
+    <div class="col-12" id="box" style="display: none;"  >
+<label for="">Tell us what they need</label>
+    <textarea name="Tell us what they need" rows="3" id="mes" required  class="form-control"></textarea>
+    </div>
+
+
+      </div>
+       <button type="submit" class="btn  mt-3" style="background-color: #17265D!important; color: #fff">Submit Data</button>
+  </form>
+ 
+     </div>
+     
+    
+    
+</div>
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="./app.js"></script>
+<script src="./bootstrap.min.js"></script>
+</body>
+</html>

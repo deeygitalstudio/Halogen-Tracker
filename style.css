@@ -1,0 +1,42 @@
+  .navbar {
+            background: linear-gradient(to right, #A08943 5%, #17265D 50%);
+            color: #fff;
+          position: fixed;
+               top: 0;
+             width: 100%;
+           overflow: hidden;
+          z-index: 1000;
+          
+        }
+
+        .container-fluid a img{
+            width: 20px;
+        }
+
+
+        .container-fluid a{
+            color: #fff;
+       
+            margin-left: 5px;
+        }
+        .container-fluid .navbar-toggler{
+          background-color: white;
+          font-size: 13px
+        }
+
+          .nav-link{
+            color: #fff!important;
+            font-size: 13px
+            
+        }
+
+     .row h4{
+        font-weight: 600;
+        margin-top: 20px;
+     }
+
+
+     body, select{
+      font-size: 11px!important;
+     }
+   
