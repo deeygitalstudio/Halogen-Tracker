@@ -127,12 +127,12 @@
 
 
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxXoTfz3jTJsmzK1E6dRu39qS9x4EGstBPLJS6_Eqg6hX1omK5whR6aeI0TsY4vETZ6/execc';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxXoTfz3jTJsmzK1E6dRu39qS9x4EGstBPLJS6_Eqg6hX1omK5whR6aeI0TsY4vETZ6/exec';
                 const form = document.forms['submit-to-google-sheet'];
 
                 form.addEventListener('submit', e => {
                  e.preventDefault()
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                fetch(scriptURL, { method: 'post', body: new FormData(form)})
                .then(response => {
                Swal.fire({
                 icon: "success",
