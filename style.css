@@ -46,4 +46,6 @@
      body, select{
       font-size: 12px!important;
      }
-   
+   .lab{
+  font-weight: 600;
+}
