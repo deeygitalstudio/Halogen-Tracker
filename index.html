@@ -37,16 +37,16 @@
   <form action="" class="mt-5" method="post" name="submit-to-google-sheet">
     <div class="row">
     <div class="col-lg-3 mb-3">
-  <label>Name of ZA</label>
+  <label class="lab">Name of ZA</label>
      <input type="text" required class="form-control" name="Name of ZA" id="name" autocomplete="off">
     </div>
 
     <div class="col-lg-3 mb-3">
-  <label>Time of Arrival</label>
+  <label class="lab">Time of Arrival</label>
      <input type="time" class="form-control" required name="Time of Arrival" id="time" autocomplete="off">
     </div>
     <div class="col-lg-3 mb-3">
-  <label>Mode of Patrole</label>
+  <label class="lab">Mode of Patrol</label>
 <div class="form-check">
   <input class="form-check-input" name="Mode of Patrol" type="checkbox" value= "Day Patrol" id="day">
   <label class="form-check-label" for="flexCheckDefault">
@@ -62,12 +62,12 @@
     </div>
 
     <div class="col-lg-3 mb-3">
-  <label>Date</label>
+  <label class="lab">Date</label>
      <input type="date" class="form-control" required name="Date" id="time" autocomplete="off">
     </div>
       
     <div class="col-lg-3 mb-3">
-  <label>Region</label>
+  <label class="lab">Region</label>
     <select class="form-select" required name="Region" id="region" onchange="populateZones()" aria-label="Default select example">
   <option placeholder="select a region" ></option>
   <option value="Upper Mainland 1">Upper Mainland 1</option>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="col-lg-3 mb-3">
-  <label>Zone</label>
+  <label class="lab">Zone</label>
          <select id="zone" name="Zone" required class="form-select" aria-label="Default select example">
         <!-- Options will be populated dynamically -->
     </select>
@@ -93,33 +93,29 @@
     </div>
 
     <div class="col-lg-3 mb-3">
-  <label>Name of Location</label>
+  <label class="lab">Name of Location</label>
     <input type="text" name="Name of Location" required class="form-control" id="location" autocomplete="off">
 
     </div>
     <div class="col-lg-3 mb-3">
-  <label>Name of Supervisor</label>
+  <label class="lab">Name of Supervisor</label>
     <input type="text" name="Name of Supervisor" required class="form-control" id="supervisor" autocomplete="off">
 
     </div>
     <div class="col-lg-3 mb-3">
-  <label>Guard Strength</label>
+  <label class="lab">Guard Strength</label>
     <input type="number" name="Guard Strength" required class="form-control" id="gstr" autocomplete="off">
 
     </div>
     <div class="col-lg-3 mb-3">
-  <label>Number of guards Absent</label>
+  <label class="lab">Number of guards Absent</label>
     <input type="number" name="Number of guards Absent" required class="form-control" id="abs" autocomplete="off">
 
     </div>
-<div class="col-lg-3 mb-3">
-  <label>Number of guards Present</label>
-    <input type="number" name="Number of guards present" required class="form-control" id="abs" autocomplete="off">
 
-    </div>
 
     <div class="col-lg-3 mb-3">
-  <label>Reason</label>
+  <label class="lab">Reason</label>
   <div class="form-check">
   <input class="form-check-input" name="Reason" type="checkbox"  value="Short Manning" id="shman">
   <label class="form-check-label" for="flexCheckDefault">
@@ -136,7 +132,7 @@
     </div>
       
     <div class="col-lg-3 mb-3">
-  <label>Documentation Status</label>
+  <label class="lab">Documentation Status</label>
   <div class="form-check">
   <input class="form-check-input" name="Documentation Status" type="checkbox" value= "Complete and Current" id="cc">
   <label class="form-check-label" for="flexCheckDefault">
@@ -205,7 +201,7 @@
          </div>
 
            <div class="col-lg-3 mb-3">
-  <label>Kitting Status</label>
+  <label class="lab">Kitting Status</label>
     <select class="form-select" required onchange="populateText()" name="Kitting Status" id="kit"  aria-label="Default select example">
   <option></option>
   <option value="Complete">Complete</option>
@@ -216,7 +212,7 @@
     </div>
 
     <div class="col-12" id="box" style="display: none;"  >
-<label for="">Tell us what they need</label>
+<label class="lab">Tell us what they need</label>
     <textarea name="Message" rows="3" id="mes"   class="form-control"></textarea>
     </div>
 
